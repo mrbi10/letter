@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dear Papu — A Little Request 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#fff7fb;
+      --bg2:#f7fbff;
+      --paper:#fff;
+      --accent:#ff6b9a;
+      --muted:#6b7280;
+      --card-shadow: 0 10px 30px rgba(15,23,42,0.08);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 400px at 10% 10%, rgba(255,107,154,0.06), transparent),
+                  linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      display:flex;align-items:center;justify-content:center;padding:40px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .scene{width:min(880px,96%);max-width:980px;position:relative}
+
+    /* floating hearts */
+    .hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .heart{position:absolute;width:18px;height:18px;background:var(--accent);transform:rotate(45deg);border-radius:3px;opacity:0.9}
+    .heart:before,.heart:after{content:'';position:absolute;background:var(--accent);width:18px;height:18px;border-radius:50%}
+    .heart:before{top:-9px;left:0}
+    .heart:after{left:-9px;top:0}
+    @keyframes floatUp{0%{transform:translateY(30px) scale(.9);opacity:0}30%{opacity:1}100%{transform:translateY(-260px) scale(1.05);opacity:0}}
+
+    /* card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.99));
+      border-radius:18px;box-shadow:var(--card-shadow);padding:36px;position:relative;overflow:hidden;
+      border:1px solid rgba(15,23,42,0.03);
+    }
+
+    .top-bar{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .stamp{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#ffe7f0,#ffdff2);display:flex;align-items:center;justify-content:center;font-weight:700;color:#b02e63}
+    .title{font-size:20px;font-weight:600}
+    .subtitle{color:var(--muted);font-size:13px}
+
+    /* letter paper */
+    .paper{background:linear-gradient(180deg,#fff,#fffbff);border-radius:12px;padding:28px;margin-top:8px;box-shadow:0 6px 26px rgba(10,15,30,0.04);border:1px dashed rgba(200,150,170,0.12)}
+    .paper p{line-height:1.6;color:#1f2937;margin:0 0 14px}
+    .paper p.lead{font-size:17px}
+
+    .meta{color:var(--muted);font-size:13px;margin-bottom:18px}
+
+    .signature{display:flex;align-items:center;justify-content:space-between;margin-top:26px}
+    .sig-left{font-family:'Dancing Script',cursive;font-size:28px;color:#4b1036}
+    .sig-right{color:var(--muted);font-size:13px;text-align:right}
+
+    .controls{display:flex;gap:12px;margin-top:22px}
+    .btn{cursor:pointer;padding:10px 14px;border-radius:10px;border:0;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,#ff6b9a,#ff9ab3);color:white;box-shadow:0 6px 18px rgba(255,107,154,0.12)}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--muted)}
+
+    .note{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* small responsive */
+    @media (max-width:520px){
+      .sig-left{font-size:24px}
+      .stamp{width:56px;height:56px}
+      .title{font-size:18px}
+    }
+
+    /* print styles */
+    @media print{
+      body{background:white}
+      .hearts{display:none}
+      .btn, .controls{display:none}
+      .card{box-shadow:none;border-radius:0;border:0}
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="hearts" aria-hidden="true">
+      <!-- few decorative hearts with staggered animation -->
+      <div class="heart" style="left:8%;bottom:14%;animation:floatUp 6s linear infinite;animation-delay:0s"></div>
+      <div class="heart" style="left:26%;bottom:6%;width:22px;height:22px;animation:floatUp 7s linear infinite;animation-delay:1s"></div>
+      <div class="heart" style="left:54%;bottom:10%;animation:floatUp 5.5s linear infinite;animation-delay:.5s"></div>
+      <div class="heart" style="left:76%;bottom:8%;animation:floatUp 6.8s linear infinite;animation-delay:1.6s"></div>
+    </div>
+
+    <main class="card" role="main" aria-labelledby="page-title">
+      <div class="top-bar">
+        <div class="stamp">💌</div>
+        <div>
+          <div id="page-title" class="title">A little request — for my Papu</div>
+          <div class="subtitle">Soft, honest, and short — because you deserve the truth.</div>
+        </div>
+      </div>
+
+      <div class="paper" id="letter">
+        <div class="meta">Date: 19 November</div>
+
+        <p class="lead">Dear Papu,</p>
+
+        <p>I hope you’re smiling as you read this. I wanted to ask your permission for something small but meaningful to me. On the night of 19 November, some of my close friends — only the boys — are planning a small, safe outing together. It’s nothing elaborate, just a chance for us to step out, catch up, and enjoy a relaxed evening away from routine.</p>
+
+        <p>I know how much you care about my safety and I want you to know that I do too. I promise to be careful, to stick with the group, and to keep you updated through the night so you won’t have to worry. I’ll be back at the time you prefer, and if you’d like, I’ll send you a quick message when I leave and another when I reach back home.</p>
+
+        <p>I’m asking for your permission because your peace of mind matters to me more than anything. Your yes would make me really happy, but I also understand and respect whatever you decide. Please let me know what you’re comfortable with and I’ll follow it without question.</p>
+
+        <p>Thank you for always being the one I can turn to. I love you and I promise to be responsible.</p>
+
+        <div class="signature">
+          <div class="sig-left">With love,<br>Mrbi</div>
+          <div class="sig-right">(I'll call before I leave, and when I get back.)</div>
+        </div>
+
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="impress">Make a small surprise ✨</button>
+        <button class="btn btn-ghost" id="print">Print / Save PDF</button>
+      </div>
+
+      <div class="note">Tip: Click "Make a small surprise" for a tiny animation to make your letter feel extra special before you show Papu. Use Print → Save as PDF to keep a copy.</div>
+    </main>
+  </div>
+
+  <script>
+    // small interactive flourish — gentle confetti hearts on click
+    document.getElementById('impress').addEventListener('click', function(){
+      const root = document.querySelector('.scene');
+      for(let i=0;i<18;i++){
+        const el = document.createElement('div');
+        el.className = 'heart';
+        const size = 8 + Math.random()*18;
+        el.style.width = size + 'px';
+        el.style.height = size + 'px';
+        el.style.left = (20 + Math.random()*60) + '%';
+        el.style.bottom = '10%';
+        el.style.opacity = 1;
+        el.style.transform = 'rotate(45deg) scale(0.8)';
+        el.style.transition = 'transform 1.4s ease-out, opacity 1.4s linear';
+        root.appendChild(el);
+        requestAnimationFrame(()=>{
+          el.style.transform = 'translateY(-360px) rotate(45deg) scale(1)';
+          el.style.opacity = 0;
+        });
+        setTimeout(()=>el.remove(),1500 + Math.random()*600);
+      }
+    });
+
+    // print handler
+    document.getElementById('print').addEventListener('click', function(){
+      window.print();
+    });
+  </script>
+</body>
+</html>
